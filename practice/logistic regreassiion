@@ -1,0 +1,32 @@
+# import libraries 
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.linear_model import LogisticRegression
+
+# give input and classification of pass fail
+X = np.array([[100],[63],[40],[85]])
+y = np.array([1,0,1,0])
+
+
+# firstly we train the model via logistic regression 
+model = LogisticRegression()
+# provide X and y to model 
+model.fit(X,y)
+
+# it predicts the value according to x 
+y_predict = model.predict(X)
+# we also want to know probability 
+probability = model.predict_proba(X)
+
+
+# pltting the sigmoid function
+plt.figure(figsize=(10, 9))
+plt.scatter(X, y_predict, label="Actual Data")
+plt.plot(X, y_predict, color='red', label="Predicted Line")
+plt.xlabel("Mark")
+plt.ylabel("result")
+plt.title("Logistic Regression: Original Scale")
+plt.legend()
+plt.grid(True)
+plt.show()
