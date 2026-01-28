@@ -1,10 +1,10 @@
 # define a function 
-def count_vowels(n):
+def count_vowels(word):
     # suppose total vowels are 0 
     count = 0
     vowels = "aeiouAEIOU"
     # loop over the entire string 
-    for i in n:
+    for i in word:
         # check each letter belongs to vowels 
         if i in vowels:
             # count increases if letter belongs to vowel 
